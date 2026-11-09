@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optical Absorption | Physics of the Antarctic Ozone Hole</title>
+<style>
+:root{--bg:#08111f;--panel:#101d30;--ink:#eef4fb;--muted:#a9b8ca;--cyan:#71d8e8;--gold:#f3c969;--line:#29415b;--pink:#f08ca8}
+*{box-sizing:border-box} html,body{margin:0;background:#050b14;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.deck{width:min(1200px,96vw);aspect-ratio:16/9;background:var(--bg);border:1px solid #23364d;box-shadow:0 24px 80px #0009;position:relative;overflow:hidden}
+.slide{position:absolute;inset:0;padding:6.2% 7%;display:none;flex-direction:column;justify-content:center;background:radial-gradient(ellipse at 90% 10%,#18324b66,transparent 42%),var(--bg)}
+.slide.active{display:flex}
+.kicker{color:var(--cyan);font-size:clamp(10px,1.1vw,14px);letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:1.2em}
+h1{font-size:clamp(30px,4.4vw,58px);line-height:1.05;letter-spacing:-.04em;margin:0 0 .28em;max-width:950px}
+h2{font-size:clamp(25px,3.1vw,42px);line-height:1.1;letter-spacing:-.03em;margin:0 0 .55em}
+h3{font-size:clamp(15px,1.6vw,21px);margin:.2em 0 .5em;color:var(--gold)}
+p,li{font-size:clamp(13px,1.45vw,19px);line-height:1.5;color:#d5dfeb}
+.small{font-size:clamp(10px,1vw,13px);color:var(--muted)}
+.lead{font-size:clamp(18px,2vw,27px);max-width:850px;color:#d9e8f4;line-height:1.4}
+.accent{color:var(--cyan)} .gold{color:var(--gold)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:3%;align-items:center}
+.card{background:linear-gradient(145deg,#13243a,#0d1929);border:1px solid var(--line);border-radius:16px;padding:clamp(14px,2vw,24px)}
+.eq{font-family:Georgia,serif;font-size:clamp(24px,3vw,39px);color:#fff;text-align:center;padding:18px 10px}
+.eq small{display:block;font:12px system-ui;color:var(--muted);margin-top:10px}
+.pill{display:inline-block;border:1px solid #42627d;border-radius:999px;padding:7px 12px;color:var(--cyan);font-size:12px;margin:5px}
+svg{width:100%;height:auto;max-height:310px}
+svg text{font-family:system-ui,sans-serif;fill:#dce9f5}
+.flow{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:22px 0}
+.node{border:1px solid #3a5975;background:#13263a;border-radius:12px;padding:13px 16px;text-align:center;min-width:110px}
+.arrow{color:var(--gold);font-size:24px}
+.footer{position:absolute;left:7%;right:7%;bottom:3.5%;display:flex;justify-content:space-between;color:#8396aa;font-size:clamp(9px,.9vw,12px);border-top:1px solid #22354a;padding-top:10px}
+.controls{width:min(1200px,96vw);display:flex;align-items:center;gap:12px;padding:12px 2px;color:var(--muted)}
+button{background:#14253a;color:var(--ink);border:1px solid #36516d;border-radius:9px;padding:10px 15px;font-size:14px;cursor:pointer}
+button:hover{border-color:var(--cyan)}button:disabled{opacity:.35;cursor:not-allowed}
+.progress{height:4px;background:#1b2a3c;flex:1;border-radius:8px;overflow:hidden}.bar{height:100%;background:var(--cyan);width:10%}
+.note{border-left:3px solid var(--gold);padding:8px 14px;color:#d4deea;background:#132033;margin-top:12px;font-size:clamp(11px,1.15vw,15px)}
+@media(max-width:650px){body{padding:8px;display:block}.deck{width:100%;aspect-ratio:9/12}.slide{padding:8% 7% 13%;justify-content:center}.grid{grid-template-columns:1fr;gap:8px}.grid svg{max-height:160px}.footer{bottom:3%}.controls{width:100%;flex-wrap:wrap}.controls .progress{min-width:100%}}
+@media print{body{display:block;padding:0;background:white}.deck{width:100%;height:auto;aspect-ratio:auto;border:0;box-shadow:none}.slide{position:relative;display:flex!important;width:100%;height:56.25vw;page-break-after:always}.controls{display:none}}
+</style>
+</head>
+<body>
+<div>
+<div class="deck" id="deck">
+<section class="slide active">
+ <div class="kicker">Section 02 · Optical absorption principles</div>
+ <h1>How can <span class="accent">light</span> carry momentum<br>if it has no rest mass?</h1>
+ <p class="lead">From photons and wave–particle duality to the physics of molecular absorption.</p>
+ <div class="flow"><span class="pill">Electromagnetic waves</span><span class="pill">Photons</span><span class="pill">Energy transitions</span><span class="pill">Beer–Lambert law</span></div>
+ <p class="small">The Physics of Antarctic Ozone Depletion · Presenter 2 · 10-minute section</p>
+ <div class="footer"><span>02 / OPTICAL ABSORPTION</span><span>Opening question</span></div>
+</section>
+<section class="slide">
+ <div class="kicker">01 · Start with a distinction</div><h2>Is electromagnetic radiation the same as light?</h2>
+ <div class="grid">
+  <div><p><b class="accent">Electromagnetic radiation</b> is energy propagated through oscillating electric and magnetic fields.</p><p><b class="gold">Visible light</b> is the portion of the electromagnetic spectrum detectable by the human eye.</p><p>Radio waves, microwaves, infrared, visible light, ultraviolet, X-rays and gamma rays are all electromagnetic radiation.</p></div>
+  <div class="card">
+   <svg viewBox="0 0 520 260" role="img" aria-label="Electromagnetic spectrum bands">
+    <line x1="25" y1="125" x2="495" y2="125" stroke="#7892ad" stroke-width="2"/>
+    <g font-size="13" text-anchor="middle"><rect x="28" y="75" width="65" height="100" rx="8" fill="#355a83"/><text x="60" y="205">Radio</text><rect x="100" y="75" width="65" height="100" rx="8" fill="#3e718f"/><text x="132" y="205">Micro</text><rect x="172" y="75" width="65" height="100" rx="8" fill="#4d9c9b"/><text x="204" y="205">Infrared</text><rect x="244" y="75" width="65" height="100" rx="8" fill="#e6c65e"/><text x="276" y="205">Visible</text><rect x="316" y="75" width="65" height="100" rx="8" fill="#9b6db7"/><text x="348" y="205">UV</text><rect x="388" y="75" width="45" height="100" rx="8" fill="#d27686"/><text x="410" y="205">X-ray</text><rect x="440" y="75" width="65" height="100" rx="8" fill="#c05c62"/><text x="472" y="205">Gamma</text></g>
+    <text x="25" y="42" font-size="15">Long wavelength · lower frequency</text><text x="495" y="242" font-size="15" text-anchor="end">Short wavelength · higher frequency</text>
+   </svg>
+  </div>
+ </div><div class="footer"><span>02 / OPTICAL ABSORPTION</span><span>Electromagnetic spectrum</span></div>
+</section>
+<section class="slide">
+ <div class="kicker">02 · Wave and quantum descriptions</div><h2>Is light a wave or a particle?</h2>
+ <div class="grid">
+  <div class="card"><h3>Wave-like behaviour</h3><svg viewBox="0 0 420 180"><path d="M10 90 Q35 20 60 90 T110 90 T160 90 T210 90 T260 90 T310 90 T360 90 T410 90" fill="none" stroke="#71d8e8" stroke-width="4"/><line x1="10" y1="90" x2="410" y2="90" stroke="#61758c" stroke-dasharray="4 5"/><text x="210" y="155" text-anchor="middle" font-size="15">Interference · diffraction · wavelength</text></svg></div>
+  <div class="card"><h3>Particle-like behaviour</h3><svg viewBox="0 0 420 180"><path d="M20 90 H390" stroke="#61758c" stroke-width="2" stroke-dasharray="5 5"/><g fill="#f3c969"><circle cx="70" cy="90" r="9"/><circle cx="160" cy="90" r="9"/><circle cx="250" cy="90" r="9"/><circle cx="340" cy="90" r="9"/></g><g stroke="#f3c969" stroke-width="2"><path d="M70 50V72 M160 50V72 M250 50V72 M340 50V72"/></g><text x="210" y="155" text-anchor="middle" font-size="15">Discrete energy transfer · photons</text></svg></div>
+ </div><p class="lead">Wave–particle duality does not mean light is a tiny classical object and a water-like wave at the same time. It is a quantum object whose behaviour is revealed differently by different experiments.</p>
+ <div class="footer"><span>02 / OPTICAL ABSORPTION</span><span>Wave–particle duality</span></div>
+</section>
+<section class="slide">
+ <div class="kicker">03 · Photons and momentum</div><h2>How can a massless photon have momentum?</h2>
+ <div class="grid">
+  <div><p>The familiar equation <span class="gold">E = mc²</span> describes the rest energy of an object.</p><p>For moving particles, use the relativistic energy–momentum relation:</p><div class="eq">E² = (pc)² + (m₀c²)²</div><p>For a photon, its rest mass <b>m₀ = 0</b>.</p></div>
+  <div class="card"><div class="eq">E = pc</div><div class="eq">p = E/c = h/λ</div><p class="small">A photon has zero rest mass, but it carries energy and momentum.</p><svg viewBox="0 0 360 110"><path d="M15 55 H310" stroke="#71d8e8" stroke-width="3"/><path d="M295 42 L315 55 L295 68" fill="none" stroke="#71d8e8" stroke-width="3"/><circle cx="80" cy="55" r="9" fill="#f3c969"/><text x="180" y="25" text-anchor="middle" font-size="14">photon momentum →</text></svg></div>
+ </div><div class="note">Terminology: use “zero rest mass,” not “no energy” or “no momentum.” A photon is not matter in the everyday, massive-object sense.</div>
+ <div class="footer"><span>02 / OPTICAL ABSORPTION</span><span>Relativistic energy–momentum</span></div>
+</section>
+<section class="slide">
+ <div class="kicker">04 · Light meets matter</div><h2>What happens when a photon encounters a molecule?</h2>
+ <div class="grid">
+  <div><p>A molecule can absorb a photon when the photon energy matches an allowed energy difference between molecular states.</p><div class="eq">ΔE = hν = hc/λ</div><p>The molecule moves from a lower-energy state to an excited state.</p></div>
+  <div class="card"><svg viewBox="0 0 430 280"><path d="M70 225 H360 M70 105 H360" stroke="#71d8e8" stroke-width="5"/><text x="75" y="250" font-size="15">Lower energy state</text><text x="75" y="88" font-size="15">Excited state</text><path d="M215 220 V115" stroke="#f3c969" stroke-width="4"/><path d="M202 130 L215 108 L228 130" fill="none" stroke="#f3c969" stroke-width="4"/><path d="M25 170 H195" stroke="#f08ca8" stroke-width="3"/><path d="M180 158 L200 170 L180 182" fill="none" stroke="#f08ca8" stroke-width="3"/><text x="25" y="145" font-size="14">Photon in</text><text x="250" y="165" font-size="14">ΔE</text></svg></div>
+ </div><div class="footer"><span>02 / OPTICAL ABSORPTION</span><span>Quantized energy transition</span></div>
+</section>
+<section class="slide">
+ <div class="kicker">05 · Why wavelength matters</div><h2>Why do molecules absorb specific wavelengths?</h2>
+ <div class="grid">
+  <div><p>Molecules have quantized electronic, vibrational and rotational energy states.</p><p>Different transitions require different energy differences. Therefore, absorption depends on photon frequency or wavelength.</p><p class="gold">A molecule's spectrum can act as a physical fingerprint.</p></div>
+  <div class="card"><svg viewBox="0 0 440 250"><path d="M45 205 H410 M45 205 V25" stroke="#91a5bb" stroke-width="2"/><path d="M45 205 L90 205 L115 190 L140 75 L160 190 L190 205 L245 205 L270 180 L295 110 L315 180 L340 205 L410 205" fill="none" stroke="#71d8e8" stroke-width="3"/><text x="225" y="240" text-anchor="middle" font-size="14">Wavelength →</text><text x="18" y="110" font-size="13" transform="rotate(-90 18 110)">Absorbance</text><text x="140" y="55" font-size="13" text-anchor="middle">Peak</text><text x="295" y="90" font-size="13" text-anchor="middle">Peak</text></svg><p class="small">Schematic spectrum only — not measured OClO data.</p></div>
+ </div><div class="footer"><span>02 / OPTICAL ABSORPTION</span><span>Molecular spectral fingerprint</span></div>
+</section>
+<section class="slide">
+ <div class="kicker">06 · Measuring absorption</div><h2>From a photon to an absorption spectrum</h2>
+ <div class="flow"><div class="node">Light source<br><span class="small">I₀</span></div><span class="arrow">→</span><div class="node">Sample<br><span class="small">molecules</span></div><span class="arrow">→</span><div class="node">Detector<br><span class="small">I</span></div></div>
+ <div class="grid">
+  <div><p>Compare the incident intensity with the transmitted intensity.</p><div class="eq">A = log₁₀(I₀/I)</div><p>Absorbance is a logarithmic measure of how much light is removed from the transmitted beam.</p></div>
+  <div class="card"><svg viewBox="0 0 420 190"><path d="M15 95 H125" stroke="#f3c969" stroke-width="8"/><rect x="125" y="45" width="130" height="100" rx="12" fill="#244e62" stroke="#71d8e8" stroke-width="2"/><path d="M255 95 H395" stroke="#71d8e8" stroke-width="3"/><path d="M380 82 L400 95 L380 108" fill="none" stroke="#71d8e8" stroke-width="3"/><text x="65" y="65" text-anchor="middle" font-size="15">I₀</text><text x="190" y="100" text-anchor="middle" font-size="15">Sample</text><text x="330" y="65" text-anchor="middle" font-size="15">I</text><text x="190" y="170" text-anchor="middle" font-size="13">Some wavelengths are absorbed</text></svg></div>
+ </div><div class="footer"><span>02 / OPTICAL ABSORPTION</span><span>Absorbance measurement</span></div>
+</section>
+<section class="slide">
+ <div class="kicker">07 · Beer–Lambert law</div><h2>How does absorbance depend on concentration?</h2>
+ <div class="grid">
+  <div><p>For a suitable absorbing species under defined conditions, absorbance increases with both concentration and optical path length.</p><div class="eq">A = εcl</div><p><b>A</b> absorbance · <b>ε</b> molar absorption coefficient · <b>c</b> concentration · <b>l</b> path length</p></div>
+  <div class="card"><svg viewBox="0 0 430 220"><rect x="25" y="45" width="110" height="130" rx="8" fill="#16394b" stroke="#71d8e8" stroke-width="2"/><rect x="160" y="45" width="110" height="130" rx="8" fill="#16394b" stroke="#71d8e8" stroke-width="2"/><rect x="295" y="45" width="110" height="130" rx="8" fill="#16394b" stroke="#71d8e8" stroke-width="2"/><g fill="#f3c969"><circle cx="55" cy="80" r="5"/><circle cx="90" cy="130" r="5"/><circle cx="190" cy="75" r="5"/><circle cx="225" cy="95" r="5"/><circle cx="190" cy="140" r="5"/><circle cx="250" cy="145" r="5"/><circle cx="325" cy="70" r="5"/><circle cx="365" cy="85" r="5"/><circle cx="330" cy="120" r="5"/><circle cx="375" cy="145" r="5"/><circle cx="350" cy="160" r="5"/></g><g font-size="13" text-anchor="middle"><text x="80" y="200">Lower c</text><text x="215" y="200">Higher c</text><text x="350" y="200">Higher c</text></g></svg><p class="small">Conceptual illustration: more absorbing molecules or a longer path can increase absorbance.</p></div>
+ </div><div class="footer"><span>02 / OPTICAL ABSORPTION</span><span>Beer–Lambert relationship</span></div>
+</section>
+<section class="slide">
+ <div class="kicker">08 · Put the law to work</div><h2>A simple Beer–Lambert example</h2>
+ <div class="grid">
+  <div><p>Suppose a sample has:</p><ul><li>ε = 100 L mol⁻¹ cm⁻¹</li><li>c = 0.002 mol L⁻¹</li><li>l = 1 cm</li></ul><div class="eq">A = 100 × 0.002 × 1 = 0.20</div></div>
+  <div class="card"><h3>What does A = 0.20 mean?</h3><div class="eq">I/I₀ = 10⁻ᴬ</div><div class="eq">I/I₀ ≈ 0.63</div><p>About 63% of the incident intensity is transmitted at that wavelength in this idealized example.</p></div>
+ </div><div class="note">The law has limits: it works best for appropriate dilute solutions and controlled measurement conditions. Scattering, chemical changes, stray light and instrument effects can cause deviations.</div>
+ <div class="footer"><span>02 / OPTICAL ABSORPTION</span><span>Worked example</span></div>
+</section>
+<section class="slide">
+ <div class="kicker">09 · From laboratory physics to the atmosphere</div><h2>Can we use light to investigate invisible atmospheric chemistry?</h2>
+ <div class="grid">
+  <div><p>In atmospheric spectroscopy, sunlight or moonlight can pass through a long atmospheric path before reaching a detector.</p><p>Molecules along that path absorb selected wavelengths, leaving spectral features in the received light.</p><p>By analysing those features, scientists can infer the presence or abundance of particular atmospheric species, subject to calibration and modelling.</p></div>
+  <div class="card"><svg viewBox="0 0 450 250"><circle cx="55" cy="55" r="24" fill="#f3c969"/><path d="M80 55 Q200 -10 365 65" fill="none" stroke="#f3c969" stroke-width="3" stroke-dasharray="7 5"/><path d="M20 190 Q210 145 430 190" fill="none" stroke="#71d8e8" stroke-width="3"/><path d="M20 210 Q210 165 430 210" fill="none" stroke="#71d8e8" stroke-width="2"/><path d="M365 65 L410 160" stroke="#f08ca8" stroke-width="4"/><rect x="390" y="145" width="32" height="35" rx="5" fill="#294a65" stroke="#71d8e8"/><g fill="#f3c969"><circle cx="170" cy="150" r="4"/><circle cx="205" cy="142" r="4"/><circle cx="245" cy="145" r="4"/></g><text x="55" y="25" text-anchor="middle" font-size="13">Sun</text><text x="250" y="110" text-anchor="middle" font-size="13">Atmospheric path</text><text x="405" y="200" text-anchor="middle" font-size="13">Detector</text></svg><p class="small">Conceptual path diagram; not a reconstruction of the 1986 instrument.</p></div>
+ </div><div class="footer"><span>02 / OPTICAL ABSORPTION</span><span>Atmospheric spectroscopy</span></div>
+</section>
+<section class="slide">
+ <div class="kicker">10 · Transition to Section 03</div><h2>From absorption physics to a molecular fingerprint</h2>
+ <p class="lead">The Beer–Lambert law explains how absorption can be related to the amount of an absorbing species. But how do we know <i>which</i> molecule is absorbing the light?</p>
+ <div class="flow"><div class="node">Photon energy<br><span class="small">hν</span></div><span class="arrow">→</span><div class="node">Allowed transition<br><span class="small">ΔE</span></div><span class="arrow">→</span><div class="node">Absorption spectrum<br><span class="small">wavelength pattern</span></div><span class="arrow">→</span><div class="node">Molecular identity<br><span class="small">OClO?</span></div></div>
+ <h3 class="gold">Next: Selective absorption — the chlorine dioxide (OClO) spectrum</h3>
+ <p class="small">The next section will examine the characteristic spectral features used to identify OClO. The specific historical observations and instrument details should be cited to the original research literature.</p>
+ <div class="footer"><span>02 / OPTICAL ABSORPTION</span><span>Handoff to Presenter 3</span></div>
+</section>
+</div>
+<div class="controls">
+ <button id="prev" aria-label="Previous slide">← Previous</button>
+ <span id="count">1 / 10</span>
+ <div class="progress"><div class="bar" id="bar"></div></div>
+ <button id="next" aria-label="Next slide">Next →</button>
+ <button onclick="window.print()">Print / Save PDF</button>
+</div>
+<p class="small" style="text-align:center;margin:0">Use ← → arrow keys to navigate. This is a visual draft; verify references and adapt wording with your group before submission.</p>
+</div>
+<script>
+const slides=[...document.querySelectorAll('.slide')];let current=0;
+function show(n){current=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>s.classList.toggle('active',i===current));document.getElementById('count').textContent=`${current+1} / ${slides.length}`;document.getElementById('bar').style.width=`${(current+1)/slides.length*100}%`;document.getElementById('prev').disabled=current===0;document.getElementById('next').disabled=current===slides.length-1}
+document.getElementById('prev').addEventListener('click',()=>show(current-1));document.getElementById('next').addEventListener('click',()=>show(current+1));document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();show(current+1)}if(e.key==='ArrowLeft'){e.preventDefault();show(current-1)}});
+show(0);
+</script>
+</body>
+</html>
